@@ -1,0 +1,428 @@
+{
+ "hero10": {
+  "path": "/images/hero/hero10",
+  "w": 1440,
+  "h": 528,
+  "widths": [
+   640,
+   1280,
+   1440
+  ],
+  "source": "hero10.jpg"
+ },
+ "hero12": {
+  "path": "/images/hero/hero12",
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   640,
+   1280,
+   1536
+  ],
+  "source": "hero12.jpg"
+ },
+ "hero13": {
+  "path": "/images/hero/hero13",
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   640,
+   1280,
+   1536
+  ],
+  "source": "hero13.jpg"
+ },
+ "hero14": {
+  "path": "/images/hero/hero14",
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   640,
+   1280,
+   1536
+  ],
+  "source": "hero14.jpg"
+ },
+ "hero17": {
+  "path": "/images/hero/hero17",
+  "w": 1536,
+  "h": 1024,
+  "widths": [
+   640,
+   1280,
+   1536
+  ],
+  "source": "hero17.jpg"
+ },
+ "hero18": {
+  "path": "/images/hero/hero18",
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   640,
+   1024
+  ],
+  "source": "hero18.jpg"
+ },
+ "hero19": {
+  "path": "/images/hero/hero19",
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   640,
+   1024
+  ],
+  "source": "hero19.jpg"
+ },
+ "heal-slide-1": {
+  "path": "/images/hero/heal-slide-1",
+  "w": 990,
+  "h": 470,
+  "widths": [
+   640,
+   990
+  ],
+  "source": "heal-slide-1.jpg"
+ },
+ "heal-slide-2": {
+  "path": "/images/hero/heal-slide-2",
+  "w": 990,
+  "h": 470,
+  "widths": [
+   640,
+   990
+  ],
+  "source": "heal-slide-2.jpg"
+ },
+ "heal-slide-3": {
+  "path": "/images/hero/heal-slide-3",
+  "w": 990,
+  "h": 470,
+  "widths": [
+   640,
+   990
+  ],
+  "source": "heal-slide-3.jpg"
+ },
+ "heal-slide-4": {
+  "path": "/images/hero/heal-slide-4",
+  "w": 990,
+  "h": 470,
+  "widths": [
+   640,
+   990
+  ],
+  "source": "heal-slide-4.jpg"
+ },
+ "heal-slide-5": {
+  "path": "/images/hero/heal-slide-5",
+  "w": 990,
+  "h": 470,
+  "widths": [
+   640,
+   990
+  ],
+  "source": "heal-slide-5.jpg"
+ },
+ "vision": {
+  "path": "/images/hero/vision",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "vision.jpg"
+ },
+ "parma-inn": {
+  "path": "/images/inn/parma-inn",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "parma-inn.jpg"
+ },
+ "tapestry1": {
+  "path": "/images/inn/tapestry1",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "tapestry1.jpg"
+ },
+ "tapestry2": {
+  "path": "/images/inn/tapestry2",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "tapestry2.jpg"
+ },
+ "red-room1": {
+  "path": "/images/inn/red-room1",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "red-room1.jpg"
+ },
+ "red-room2": {
+  "path": "/images/inn/red-room2",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "red-room2.jpg"
+ },
+ "panther1": {
+  "path": "/images/inn/panther1",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "panther1.jpg"
+ },
+ "panther2": {
+  "path": "/images/inn/panther2",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "panther2.jpg"
+ },
+ "panther3": {
+  "path": "/images/inn/panther3",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "panther3.jpg"
+ },
+ "panther4": {
+  "path": "/images/inn/panther4",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "panther4.jpg"
+ },
+ "panther5": {
+  "path": "/images/inn/panther5",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "panther5.jpg"
+ },
+ "lounge1": {
+  "path": "/images/inn/lounge1",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "lounge1.jpg"
+ },
+ "lounge2": {
+  "path": "/images/inn/lounge2",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "lounge2.jpg"
+ },
+ "lounge3": {
+  "path": "/images/inn/lounge3",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "lounge3.jpg"
+ },
+ "lounge4": {
+  "path": "/images/inn/lounge4",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "lounge4.jpg"
+ },
+ "spa1": {
+  "path": "/images/spa/spa1",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "spa1.jpg"
+ },
+ "ayurveda-therapi-main": {
+  "path": "/images/spa/ayurveda-therapi-main",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "ayurveda-therapi-main.jpg"
+ },
+ "aqua-experiences": {
+  "path": "/images/spa/aqua-experiences",
+  "w": 290,
+  "h": 451,
+  "widths": [
+   290
+  ],
+  "source": "aqua-experiences.jpg"
+ },
+ "yoga": {
+  "path": "/images/spa/yoga",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "yoga.jpg"
+ },
+ "beauty-main": {
+  "path": "/images/spa/beauty-main",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "beauty-main.jpg"
+ },
+ "health1": {
+  "path": "/images/healthcare/health1",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "health1.jpg"
+ },
+ "health2": {
+  "path": "/images/healthcare/health2",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "health2.jpg"
+ },
+ "health3": {
+  "path": "/images/healthcare/health3",
+  "w": 780,
+  "h": 436,
+  "widths": [
+   640,
+   780
+  ],
+  "source": "health3.jpg"
+ },
+ "nickey-singh": {
+  "path": "/images/team/nickey-singh",
+  "w": 290,
+  "h": 451,
+  "widths": [
+   290
+  ],
+  "source": "nickey-singh.jpg"
+ },
+ "thara": {
+  "path": "/images/team/thara",
+  "w": 290,
+  "h": 451,
+  "widths": [
+   290
+  ],
+  "source": "thara.jpg"
+ },
+ "prahbu": {
+  "path": "/images/team/prahbu",
+  "w": 290,
+  "h": 451,
+  "widths": [
+   290
+  ],
+  "source": "prahbu.jpg"
+ },
+ "anne": {
+  "path": "/images/team/anne",
+  "w": 290,
+  "h": 451,
+  "widths": [
+   290
+  ],
+  "source": "anne.jpg"
+ },
+ "kendra": {
+  "path": "/images/team/kendra",
+  "w": 290,
+  "h": 451,
+  "widths": [
+   290
+  ],
+  "source": "kendra.jpg"
+ },
+ "wineries": {
+  "path": "/images/locations/wineries",
+  "w": 290,
+  "h": 451,
+  "widths": [
+   290
+  ],
+  "source": "wineries.jpg"
+ },
+ "golf": {
+  "path": "/images/locations/golf",
+  "w": 290,
+  "h": 451,
+  "widths": [
+   290
+  ],
+  "source": "golf.jpg"
+ },
+ "pubs": {
+  "path": "/images/locations/pubs",
+  "w": 290,
+  "h": 451,
+  "widths": [
+   290
+  ],
+  "source": "pubs.jpg"
+ }
+}

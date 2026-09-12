@@ -56,7 +56,7 @@ export function RouteEffects() {
             io.unobserve(el)
           })
       },
-      { rootMargin: '0px 0px -8% 0px' },
+      { rootMargin: '0px 0px 10% 0px' }, // reveals just before entering, so page-bottom content (the footer) never stays hidden
     )
     els.forEach((el) => {
       el.dataset.reveal = ''

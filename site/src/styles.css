@@ -2505,3 +2505,14 @@ h3[data-reveal='in'] {
 .contact {
   padding-top: calc(var(--header) + clamp(2rem, 5vw, 4rem));
 }
+
+/* Keep the floating buttons clear of the footer credit */
+.footer {
+  padding-bottom: 6.5rem;
+}
+
+@media (min-width: 900px) {
+  .footer-base {
+    padding-right: 6rem;
+  }
+}

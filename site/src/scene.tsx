@@ -77,40 +77,40 @@ export function MeditationScene() {
   return (
     <div className="scene" ref={ref} aria-hidden="true">
       <svg viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid slice" fill="none">
-        <path className="scene-sun" style={at(1.5, 1.4)} pathLength={1} d="M1040 232a70 70 0 1 0-140 0 70 70 0 1 0 140 0Z" />
+        {/* sun, a complete ring behind the ridges */}
+        <circle className="scene-sun" style={at(1.5, 1.5)} pathLength={1} cx={1040} cy={196} r={64} />
 
+        {/* ridges: each curve runs past both edges, so no straight cut ever shows */}
         <path
           className="scene-hill scene-hill-back is-filled"
-          style={at(0, 2.2)}
+          style={at(0, 2.3)}
           pathLength={1}
-          d="M-400 380c116-70 196-100 272-62 76 38 122 26 190-30 68-56 132-56 208 6 76 62 142 68 216 18 74-50 152-50 234 24H1700V760H-400z"
+          d="M-400 438C-160 386 20 330 250 348s372 26 560-52 330-92 490-40v504H-400z"
         />
         <path
           className="scene-hill scene-hill-mid is-filled"
-          style={at(0.4, 2.2)}
+          style={at(0.45, 2.3)}
           pathLength={1}
-          d="M-400 452c132-58 214-18 292 10 78 28 142-8 214-56 72-48 142-32 222 26 80 58 172 64 268 12 68-36 206-38 324 6H1700V760H-400z"
+          d="M-400 540C-140 470 60 452 300 476s404-4 590-86 330-70 510-24v454H-400z"
         />
 
-        <path className="scene-water-1" style={at(1.05, 1.5)} pathLength={1} d="M120 502c46-12 92-12 138 0" strokeLinecap="round" />
-        <path className="scene-water-2" style={at(1.2, 1.5)} pathLength={1} d="M878 486c50-13 100-13 150 0" strokeLinecap="round" />
-        <path className="scene-water-3" style={at(1.35, 1.5)} pathLength={1} d="M932 520c38-10 76-10 114 0" strokeLinecap="round" />
-
-        <path
-          className="scene-river"
-          style={at(0.85, 2.4)}
-          pathLength={1}
-          d="M486 620c34-58 108-74 148-108 40-34 18-64-22-84-40-20-44-48-6-66 26-12 54-16 86-12"
-          strokeLinecap="round"
-        />
         <path
           className="scene-river-2"
-          style={at(1, 2.4)}
+          style={at(1.15, 2.6)}
           pathLength={1}
-          d="M566 620c30-46 96-62 130-92 34-30 14-54-20-72-34-18-36-40-4-54 20-9 42-13 66-11"
+          d="M-60 606C150 566 322 610 506 592s312-50 492-40 240 36 338 16"
           strokeLinecap="round"
         />
 
+        {/* river: two banks flowing from the foreground up to the horizon */}
+        <path
+          className="scene-river"
+          style={at(0.95, 2.6)}
+          pathLength={1}
+          d="M-60 566C130 528 300 572 486 556s318-52 498-42 246 38 342 18"
+          strokeLinecap="round"
+        />
+        {/* botanical sprays */}
         {branches.map((b) => (
           <g key={b.id} className={`scene-branch scene-branch-${b.id}`}>
             <path className="scene-stem" style={at(b.delay, 1.5)} pathLength={1} d={stem(b.p0, b.c, b.p1)} strokeLinecap="round" />

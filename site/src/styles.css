@@ -2551,7 +2551,8 @@ h3[data-reveal='in'] {
   display: block;
 }
 
-.scene path {
+.scene path,
+.scene circle {
   fill: none;
   stroke: var(--illustration-stroke);
   stroke-width: var(--illustration-width);
@@ -2575,7 +2576,8 @@ h3[data-reveal='in'] {
   opacity: calc(var(--illustration-opacity) * 0.62);
 }
 
-.scene[data-draw='in'] path {
+.scene[data-draw='in'] path,
+.scene[data-draw='in'] circle {
   animation: scene-draw var(--dur, 2s) cubic-bezier(0.22, 0.61, 0.36, 1) var(--d, 0s) forwards;
 }
 
@@ -2585,7 +2587,8 @@ h3[data-reveal='in'] {
     scene-fill 1.4s ease-out var(--fd, 1s) forwards;
 }
 
-.scene[data-draw='done'] path {
+.scene[data-draw='done'] path,
+.scene[data-draw='done'] circle {
   stroke-dashoffset: 0;
 }
 
@@ -2619,14 +2622,14 @@ h3[data-reveal='in'] {
   }
 
   .scene-branch-tl,
-  .scene-water-1,
   .scene-river-2 {
     display: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scene path {
+  .scene path,
+  .scene circle {
     stroke-dashoffset: 0;
   }
 

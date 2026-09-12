@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Closing, Img, Marquee, Mosaic, SplitText, TeamCollage, useTilt } from '../components'
 import { MeditationScene } from '../scene'
+import { Glance } from '../cards'
 import { rooms, spaCategories, visionPoints, worlds, type ImageKey } from '../data/content'
 
 const slides: { k: ImageKey; alt: string }[] = [
@@ -102,6 +103,13 @@ export default function Home() {
           ))}
         </figure>
       </section>
+
+      <Glance>
+        <div className="section-head">
+          <p className="kicker">At a glance</p>
+          <h2>What Parma holds.</h2>
+        </div>
+      </Glance>
 
       <section className="philosophy">
         <Img k="hero12" alt="Morning mist over autumn forest in the Blue Ridge" />

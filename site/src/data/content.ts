@@ -60,6 +60,10 @@ export const pages: Record<string, Meta> = {
     title: 'Reserve and contact | Parma in Little Washington',
     description: 'Send an inquiry to Parma in Little Washington, 105 Christmas Tree Lane, Washington, VA 22747. 540 987 8588.',
   },
+  '/credits': {
+    title: 'Photography credits | Parma in Little Washington',
+    description: 'Sources and licences for the photographs used on this website.',
+  },
   '*': { title: 'Page not found | Parma in Little Washington', description: 'This page could not be found.' },
 }
 
@@ -138,7 +142,7 @@ export const spaCategories: SpaCategory[] = [
     id: 'heat',
     name: 'Heat',
     title: 'Heat therapies',
-    image: 'spa1',
+    image: 'hammam-bath',
     treatments: [
       { name: 'Hammam', duration: '30 min', description: 'A milk-and-rose or eucalyptus soak, finished with a body polish.' },
       { name: 'Kuti Swedhana', duration: '30 min', description: 'Herbal mud wrap and steam, then a warm-water rinse.' },
@@ -149,7 +153,7 @@ export const spaCategories: SpaCategory[] = [
     id: 'traditional',
     name: 'Traditional',
     title: 'Traditional therapies',
-    image: 'aqua-experiences',
+    image: 'treatment-room',
     treatments: [
       { name: 'Royal Thai Massage', duration: '1 hr 20–50 min', description: 'Palace-born acupressure along energy lines to release blockages.' },
       { name: 'Traditional Thai / Lanna Tok Sen', duration: '1 hr 20–50 min', description: 'Meridian stretching, or rhythmic tamarind-stick tapping followed by herbal compresses.' },
@@ -162,7 +166,7 @@ export const spaCategories: SpaCategory[] = [
     id: 'aqua',
     name: 'Aqua',
     title: 'Aqua experiences',
-    image: 'vision',
+    image: 'spa-pool',
     treatments: [
       { name: 'Vichy Shower', duration: '45 min', description: 'A five-head shower table with a herbal scrub.' },
       { name: 'Hydrotherapy', duration: '30 min', description: 'One of the oldest water treatments, for muscular tension and circulation.' },
@@ -214,17 +218,28 @@ export const team: Person[] = [
 ]
 export const teamMore = ['Dr. Sally McFarland', 'Elsie Fisher', 'Danielle', 'Dianna', 'Gina', 'Sara', 'Marietta']
 
-export const experiences: { name: string; text: string }[] = [
+export const experiences: { name: string; text: string; image: ImageKey; label: string }[] = [
   {
     name: 'The town of Washington',
     text: 'A couple of miles from Parma, founded in 1769, with galleries, shops, and its own theatre. The visitor center on Route 211, beside the town library, is open Friday–Sunday, 10 AM–5 PM.',
+    image: 'town-washington',
+    label: 'Two miles away',
   },
-  { name: 'Luray Caverns', text: 'Natural underground splendour. A visit to this area is incomplete without them.' },
-  { name: 'Local wineries', text: 'Virginia is becoming a mecca after Napa. Several estates nearby offer distinctive tastings.' },
-  { name: 'Golf and equestrian', text: 'Tee times at Stonewall Golf Club and Lake Manassas, and riding lessons at a center next to the property.' },
+  { name: 'Luray Caverns', text: 'Natural underground splendour. A visit to this area is incomplete without them.', image: 'luray-caverns', label: 'Underground' },
+  { name: 'Local wineries', text: 'Virginia is becoming a mecca after Napa. Several estates nearby offer distinctive tastings.', image: 'vineyard-va', label: 'Tastings' },
+  { name: 'Golf', text: 'Tee times at Stonewall Golf Club and Lake Manassas.', image: 'golf-course', label: 'Tee times' },
+  { name: 'Equestrian', text: 'Riding lessons at a center next to the property.', image: 'equestrian', label: 'Next door' },
   {
     name: 'Tables nearby',
     text: 'Blue Rock Inn deserves a special mention. Also: The Inn at Little Washington, Griffin Tavern, Thornton River Grille, and more.',
+    image: 'dining-table',
+    label: 'Dining',
+  },
+  {
+    name: 'Skyline Drive',
+    text: 'The ridge road through Shenandoah National Park, at its best when the valley turns in autumn.',
+    image: 'skyline-drive',
+    label: 'Blue Ridge',
   },
 ]
 

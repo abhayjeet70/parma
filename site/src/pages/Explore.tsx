@@ -1,5 +1,5 @@
 import { Closing, Img, Mosaic, PageHero } from '../components'
-import { experiences } from '../data/content'
+import { ExperienceCards } from '../cards'
 
 export default function Explore() {
   return (
@@ -19,20 +19,12 @@ export default function Explore() {
         ]}
       />
 
-      <section className="section wrap explore">
-        <ol className="explore-list">
-          {experiences.map((e) => (
-            <li key={e.name}>
-              <h2>{e.name}</h2>
-              <p>{e.text}</p>
-            </li>
-          ))}
-        </ol>
-        <figure className="explore-panels" aria-hidden="true">
-          <Img k="wineries" alt="" sizes="(min-width: 900px) 18vw, 33vw" />
-          <Img k="pubs" alt="" sizes="(min-width: 900px) 18vw, 33vw" />
-          <Img k="golf" alt="" sizes="(min-width: 900px) 18vw, 33vw" />
-        </figure>
+      <section className="section wrap">
+        <div className="section-head">
+          <p className="kicker">Beyond the gates</p>
+          <h2>Rappahannock, within an easy drive.</h2>
+        </div>
+        <ExperienceCards />
       </section>
 
       <figure className="plate wrap">

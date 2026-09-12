@@ -1,4 +1,5 @@
 import { Closing, Img, PageHero } from '../components'
+import { SpaCards } from '../cards'
 import { spaCategories } from '../data/content'
 
 export default function Spa() {
@@ -14,6 +15,10 @@ export default function Spa() {
           Guests may book a comprehensive assessment with an Ayurvedic doctor: pulse, eyes, nails, a brief questionnaire, and a programme of natural
           therapies tailored to your dosha.
         </p>
+      </section>
+
+      <section className="section-tight wrap">
+        <SpaCards />
       </section>
 
       <section className="wrap menu-cats" aria-label="Treatment menu">

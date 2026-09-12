@@ -271,6 +271,8 @@ export function Footer() {
           <a href="https://webnxt.co/" target="_blank" rel="noopener noreferrer">
             WebNxt
           </a>
+          {' · '}
+          <Link to="/credits">Photography credits</Link>
         </p>
       </div>
     </footer>

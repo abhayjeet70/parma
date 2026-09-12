@@ -33,3 +33,30 @@ Sources: P = parma.avhita.com/images/, H = parmaheal.avhita.com/images/landing-p
   - The source has no photograph of Luray Caverns, so none is shown.
 - **Source resolution:** most images are 780px wide. The new site only uses them at sizes they support, and full-bleed treatment is reserved for the 1536px landscapes.
 - **Not migrated:** audio/water.mp3.
+
+## Licensed photographs added later (not Parma's own)
+
+The source sites had no usable pictures of the local attractions, and three spa
+categories shared one file. These gaps are filled with freely licensed photographs
+from Wikimedia Commons, downloaded once and optimized into `public/images/stock/`
+(WebP at 640 / 1280 / 1600). Nothing is hotlinked.
+
+Full attribution is published on the site at `/credits`, and the raw data is in
+`site/src/data/credits.json`.
+
+| Asset | Subject | Author | Licence |
+|---|---|---|---|
+| town-washington | Washington, Virginia | Doug Kerr | CC BY-SA 2.0 |
+| luray-caverns | Luray Caverns | Famartin | CC BY-SA 4.0 |
+| vineyard-va | Virginia vineyard | Nyttend | Public domain |
+| golf-course | Golf fairway | Chris Heaton | CC BY-SA 2.0 |
+| equestrian | Riding in open country | ITookSomePhotos | CC BY-SA 4.0 |
+| dining-table | Restaurant table setting | Krisztina.Konczos | CC BY-SA 2.0 |
+| skyline-drive | Skyline Drive in autumn | Shenandoah National Park | Public domain |
+| hammam-bath | Bath house interior | seier+seier | CC BY 2.0 |
+| spa-pool | Indoor spa pool | Basile Morin | CC BY-SA 4.0 |
+| treatment-room | Treatment room | Harrison Keely | CC BY 4.0 |
+
+**Note for the client:** these are illustrative stock photographs, not pictures of
+Parma or of the named businesses. Replace them with the client's own photography
+when it is available, and the credits page can then be removed.

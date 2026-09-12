@@ -424,5 +424,115 @@
    290
   ],
   "source": "pubs.jpg"
+ },
+ "dining-table": {
+  "path": "/images/stock/dining-table",
+  "w": 1920,
+  "h": 1440,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "source": "wikimedia-commons"
+ },
+ "equestrian": {
+  "path": "/images/stock/equestrian",
+  "w": 1920,
+  "h": 1423,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "source": "wikimedia-commons"
+ },
+ "golf-course": {
+  "path": "/images/stock/golf-course",
+  "w": 1600,
+  "h": 1067,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "source": "wikimedia-commons"
+ },
+ "hammam-bath": {
+  "path": "/images/stock/hammam-bath",
+  "w": 1920,
+  "h": 1510,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "source": "wikimedia-commons"
+ },
+ "luray-caverns": {
+  "path": "/images/stock/luray-caverns",
+  "w": 1920,
+  "h": 1440,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "source": "wikimedia-commons"
+ },
+ "skyline-drive": {
+  "path": "/images/stock/skyline-drive",
+  "w": 1920,
+  "h": 1280,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "source": "wikimedia-commons"
+ },
+ "spa-pool": {
+  "path": "/images/stock/spa-pool",
+  "w": 1920,
+  "h": 1280,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "source": "wikimedia-commons"
+ },
+ "town-washington": {
+  "path": "/images/stock/town-washington",
+  "w": 1920,
+  "h": 1440,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "source": "wikimedia-commons"
+ },
+ "treatment-room": {
+  "path": "/images/stock/treatment-room",
+  "w": 1920,
+  "h": 2560,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "source": "wikimedia-commons"
+ },
+ "vineyard-va": {
+  "path": "/images/stock/vineyard-va",
+  "w": 1920,
+  "h": 1277,
+  "widths": [
+   640,
+   1280,
+   1600
+  ],
+  "source": "wikimedia-commons"
  }
 }

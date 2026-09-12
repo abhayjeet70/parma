@@ -9,6 +9,7 @@ import Healthcare from './pages/Healthcare'
 import Meditation from './pages/Meditation'
 import Explore from './pages/Explore'
 import Contact from './pages/Contact'
+import Credits from './pages/Credits'
 
 // ponytail: all pages in one bundle (~text only); split with React.lazy if it grows past ~150 kB.
 const withHero = ['/', '/about', '/inn', '/spa', '/healthcare', '/meditation', '/explore']
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/meditation" element={<Meditation />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/credits" element={<Credits />} />
           <Route
             path="*"
             element={

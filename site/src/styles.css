@@ -2637,3 +2637,205 @@ h3[data-reveal='in'] {
     fill-opacity: 1;
   }
 }
+
+/* ---------------------------------------------------------------
+   Cards: staggered entrance, cursor spotlight, quiet lift
+----------------------------------------------------------------*/
+.cards {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition: transform 500ms var(--ease), box-shadow 500ms var(--ease), border-color 500ms var(--ease);
+}
+
+/* the spotlight follows the pointer across each card */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(420px circle at var(--px, 50%) var(--py, 0%), rgba(212, 176, 97, 0.16), transparent 62%);
+  transition: opacity 450ms var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(184, 144, 63, 0.5);
+  box-shadow: 0 18px 40px rgba(29, 24, 21, 0.12);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card-media {
+  background: var(--stone);
+  aspect-ratio: 4 / 3;
+  display: flex;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--stone);
+}
+
+.card-body {
+  position: relative;
+  z-index: 2;
+  padding: 1.4rem 1.4rem 1.6rem;
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+}
+
+.card-label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-ink);
+}
+
+.card h3 {
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+}
+
+.card-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* figures strip */
+.glance {
+  display: grid;
+  gap: 1rem;
+}
+
+.glance-card {
+  padding: 1.6rem 1.4rem;
+  gap: 0.35rem;
+  display: grid;
+  align-content: start;
+}
+
+.glance-value {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 6vw, 4.6rem);
+  line-height: 0.9;
+}
+
+.glance-label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-ink);
+}
+
+.glance-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* credits page */
+.credits-page {
+  padding-top: calc(var(--header) + clamp(2rem, 5vw, 4rem));
+  padding-bottom: var(--space-section);
+}
+
+.credits-page h1 {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-ink);
+  margin-bottom: 1.25rem;
+}
+
+.credit-list {
+  margin-top: 3rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.credit-list li {
+  padding-block: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.credit-list h2 {
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  margin-bottom: 0.4rem;
+}
+
+.credit-list p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 640px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .glance {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .credit-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .glance {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* entrance: cards rise in sequence when revealed */
+@supports (animation-timeline: view()) {
+  .card {
+    animation: card-in linear both;
+    animation-timeline: view();
+    animation-range: entry 5% entry 55%;
+  }
+
+  @keyframes card-in {
+    from {
+      opacity: 0;
+      transform: translateY(34px);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+    transform: none;
+  }
+}

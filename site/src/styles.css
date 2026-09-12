@@ -2518,12 +2518,13 @@ h3[data-reveal='in'] {
 }
 
 /* ---------------------------------------------------------------
-   Hand-drawn meditation landscape (section background artwork)
+   Soft landscape artwork (section background)
 ----------------------------------------------------------------*/
 :root {
-  --illustration-stroke: #9c8e7e;
-  --illustration-opacity: 0.42;
-  --illustration-width: 1.5;
+  --illustration-stroke: #a8907a;
+  --illustration-fill: rgba(176, 150, 126, 0.18);
+  --illustration-opacity: 0.55;
+  --illustration-width: 2.2;
 }
 
 .has-scene {
@@ -2554,18 +2555,42 @@ h3[data-reveal='in'] {
   fill: none;
   stroke: var(--illustration-stroke);
   stroke-width: var(--illustration-width);
+  stroke-linejoin: round;
   opacity: var(--illustration-opacity);
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
   vector-effect: non-scaling-stroke;
 }
 
+.scene .is-filled {
+  fill: var(--illustration-fill);
+  fill-opacity: 0;
+}
+
+.scene .scene-leaves {
+  stroke-width: calc(var(--illustration-width) * 0.7);
+}
+
+.scene .scene-hill-back {
+  opacity: calc(var(--illustration-opacity) * 0.62);
+}
+
 .scene[data-draw='in'] path {
   animation: scene-draw var(--dur, 2s) cubic-bezier(0.22, 0.61, 0.36, 1) var(--d, 0s) forwards;
 }
 
+.scene[data-draw='in'] .is-filled {
+  animation:
+    scene-draw var(--dur, 2s) cubic-bezier(0.22, 0.61, 0.36, 1) var(--d, 0s) forwards,
+    scene-fill 1.4s ease-out var(--fd, 1s) forwards;
+}
+
 .scene[data-draw='done'] path {
   stroke-dashoffset: 0;
+}
+
+.scene[data-draw='done'] .is-filled {
+  fill-opacity: 1;
 }
 
 @keyframes scene-draw {
@@ -2574,35 +2599,38 @@ h3[data-reveal='in'] {
   }
 }
 
+@keyframes scene-fill {
+  to {
+    fill-opacity: 1;
+  }
+}
+
 /* Room for the artwork to breathe behind the words */
 .intro.has-scene {
-  min-height: min(62svh, 560px);
+  min-height: min(70svh, 620px);
   align-content: center;
 }
 
 /* Mobile: fewer strokes, lighter line, recomposed rather than scaled down */
 @media (max-width: 639px) {
   :root {
-    --illustration-width: 1.1;
-    --illustration-opacity: 0.3;
+    --illustration-width: 1.6;
+    --illustration-opacity: 0.45;
   }
 
-  .scene-botanical-1,
-  .scene-botanical-2,
-  .scene-geometry-2,
-  .scene-river-2,
-  .scene-arms {
+  .scene-branch-tl,
+  .scene-water-1,
+  .scene-river-2 {
     display: none;
-  }
-
-  .scene svg {
-    transform: scale(1.45) translateY(6%);
-    transform-origin: 50% 60%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .scene path {
     stroke-dashoffset: 0;
+  }
+
+  .scene .is-filled {
+    fill-opacity: 1;
   }
 }

@@ -1826,3 +1826,368 @@ img[data-reveal='in'] {
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------------------------------------------------------------
+   Photographs keep their own proportions (nothing is cropped).
+   Full-bleed backgrounds (hero, philosophy, place) still fill.
+----------------------------------------------------------------*/
+.strip img,
+.mosaic img,
+.pair img,
+.cat-image,
+.feature-media img,
+.world-thumb,
+.portraits img,
+.collage img,
+.explore-panels img,
+.team-lead img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.worlds-stage {
+  aspect-ratio: 780 / 436;
+  max-height: none;
+}
+
+.worlds-stage img {
+  object-fit: contain;
+  background: var(--stone);
+}
+
+/* Mosaic: even columns, each image at its natural height */
+.mosaic {
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.mosaic figure:first-child {
+  grid-column: auto;
+}
+
+/* Collage: equal cells, portraits uncropped */
+.collage li,
+.collage li:first-child {
+  aspect-ratio: auto;
+  grid-column: auto;
+  grid-row: auto;
+}
+
+@media (min-width: 900px) {
+  .mosaic {
+    grid-template-columns: repeat(3, 1fr);
+    height: auto;
+  }
+
+  .collage {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: none;
+  }
+
+  .collage li:first-child {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+/* Drift would crop these, so they stay still */
+@supports (animation-timeline: view()) {
+  .plate img,
+  .feature-media img {
+    animation: none;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Scroll progress bar
+----------------------------------------------------------------*/
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 2px;
+  z-index: 60;
+  background: var(--gold-sheen);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  pointer-events: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: progress linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@keyframes progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ---------------------------------------------------------------
+   Floating buttons: WhatsApp + chat
+----------------------------------------------------------------*/
+.fab {
+  position: fixed;
+  z-index: 55;
+  right: clamp(1rem, 3vw, 2rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(29, 24, 21, 0.28);
+  transition: transform 300ms var(--ease), box-shadow 300ms var(--ease);
+}
+
+.fab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 34px rgba(29, 24, 21, 0.34);
+}
+
+.fab-wa {
+  bottom: calc(1rem + 56px + 0.75rem);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+}
+
+.fab-wa svg {
+  width: 30px;
+  height: 30px;
+}
+
+.fab-chat {
+  bottom: 1rem;
+  height: 56px;
+  padding: 0 1.4rem;
+  border-radius: 999px;
+  background: var(--forest);
+  color: var(--on-dark);
+  font: 700 0.8125rem/1 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .fab-wa {
+    bottom: calc(1.5rem + 56px + 0.75rem);
+  }
+
+  .fab-chat {
+    bottom: 1.5rem;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Chat panel
+----------------------------------------------------------------*/
+.chat {
+  position: fixed;
+  z-index: 56;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: calc(1rem + 56px + 0.75rem);
+  width: min(360px, calc(100vw - 2rem));
+  max-height: min(70svh, 560px);
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 50px rgba(29, 24, 21, 0.28);
+  animation: chat-in 320ms var(--ease) both;
+}
+
+.chat[hidden] {
+  display: none;
+}
+
+@keyframes chat-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+}
+
+.chat-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+  background: var(--forest);
+  color: var(--on-dark);
+}
+
+.chat-head p {
+  margin: 0;
+  font: 700 0.8125rem/1 var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.chat-head button {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.25rem;
+}
+
+.chat-log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+}
+
+.bubble {
+  margin: 0;
+  max-width: 85%;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  animation: bubble-in 340ms var(--ease) both;
+}
+
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.bubble-bot {
+  background: var(--stone);
+  justify-self: start;
+}
+
+.bubble-you {
+  background: var(--forest);
+  color: var(--on-dark);
+  justify-self: end;
+}
+
+.bubble-link {
+  display: block;
+  margin-top: 0.35rem;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber-ink);
+}
+
+.chat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0 1rem 0.75rem;
+}
+
+.chat-chips button {
+  background: none;
+  border: 1px solid var(--line);
+  padding: 0.4rem 0.7rem;
+  font: 400 0.8125rem/1.2 var(--sans);
+  cursor: pointer;
+  transition: background 250ms var(--ease), border-color 250ms var(--ease);
+}
+
+.chat-chips button:hover {
+  background: var(--stone);
+  border-color: var(--amber);
+}
+
+.chat-form {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem 0.75rem;
+}
+
+.chat-form input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  font-size: 0.9375rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 0;
+}
+
+.chat-form button {
+  border: 0;
+  padding: 0 1rem;
+  background: var(--forest);
+  color: var(--on-dark);
+  font: 700 0.75rem/1 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.chat-foot {
+  margin: 0;
+  padding: 0 1rem 0.9rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  max-width: none;
+}
+
+/* ---------------------------------------------------------------
+   Extra scroll / hover effects
+----------------------------------------------------------------*/
+.nav a {
+  position: relative;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 400ms var(--ease);
+}
+
+.nav a:hover::after,
+.nav a[aria-current='page']::after {
+  transform: scaleX(1);
+}
+
+.kicker[data-reveal] {
+  transform: translateX(-18px);
+}
+
+.kicker[data-reveal='in'] {
+  transform: none;
+}
+
+/* Section photographs settle as they enter the viewport */
+@supports (animation-timeline: view()) {
+  .mosaic figure,
+  .collage li {
+    animation: settle-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 65%;
+  }
+
+  @keyframes settle-in {
+    from {
+      opacity: 0.35;
+      transform: translateY(26px);
+    }
+  }
+}

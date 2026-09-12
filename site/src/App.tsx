@@ -1,5 +1,6 @@
 import { Link, Route, Routes, useLocation } from 'react-router-dom'
 import { Footer, Header, RouteEffects } from './components'
+import { ChatWidget, ScrollProgress, WhatsAppButton } from './widgets'
 import Home from './pages/Home'
 import About from './pages/About'
 import Inn from './pages/Inn'
@@ -45,6 +46,9 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <ScrollProgress />
+      <WhatsAppButton />
+      <ChatWidget />
     </>
   )
 }

@@ -2337,3 +2337,76 @@ h3[data-reveal='in'] {
   text-decoration: underline;
   text-underline-offset: 0.3em;
 }
+
+/* ---------------------------------------------------------------
+   Nothing clips the photographs: no hover zoom, no clipped frames
+----------------------------------------------------------------*/
+.mosaic figure,
+.collage li,
+.strip li {
+  overflow: visible;
+}
+
+.collage li:hover img,
+.mosaic figure:hover img,
+.strip li:hover img,
+.collage li:hover img[data-reveal],
+.mosaic figure:hover img[data-reveal],
+.strip li:hover img[data-reveal] {
+  transform: none;
+}
+
+.collage img,
+.mosaic img,
+.world-thumb,
+.strip img {
+  transition: opacity 900ms var(--ease), clip-path 1400ms var(--ease), filter 600ms var(--ease);
+}
+
+.mosaic figure:hover img,
+.collage li:hover img {
+  filter: brightness(1.05);
+}
+
+/* The entry animation fades only, so it can never cut into a photograph */
+@keyframes settle-in {
+  from {
+    opacity: 0.25;
+  }
+}
+
+/* Captions still need their own clipping context */
+.collage li {
+  position: relative;
+}
+
+/* ---------------------------------------------------------------
+   Chat button: round icon, matching the WhatsApp one
+----------------------------------------------------------------*/
+.fab-chat {
+  bottom: 1rem;
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--gold);
+}
+
+.fab-chat svg {
+  width: 28px;
+  height: 28px;
+}
+
+@media (min-width: 640px) {
+  .fab-chat {
+    bottom: 1.5rem;
+  }
+}
+
+/* No clipping frames around content photographs */
+.plate,
+.feature-media,
+.pair article {
+  overflow: visible;
+}

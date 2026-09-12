@@ -2451,3 +2451,57 @@ h3[data-reveal='in'] {
 .page-hero + .mosaic {
   padding-top: clamp(3rem, 6vw, 5rem);
 }
+
+/* ---------------------------------------------------------------
+   Tighter vertical rhythm: less dead space between sections
+----------------------------------------------------------------*/
+:root {
+  --space-section: clamp(3.5rem, 7vw, 6.5rem);
+}
+
+.statement {
+  font-size: clamp(1.9rem, 3.6vw, 3.1rem);
+}
+
+.intro .statement {
+  font-size: clamp(2.2rem, 4.6vw, 4.2rem);
+}
+
+/* Intro paragraphs sit next to the statement, not at the foot of it */
+.split {
+  align-items: start;
+  gap: 1.5rem clamp(2rem, 4vw, 4rem);
+}
+
+.section-head {
+  margin-bottom: 2.5rem;
+}
+
+.room-head {
+  margin-bottom: 1.5rem;
+}
+
+.room {
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.menu-cats,
+.mosaic {
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.people,
+.worlds,
+.explore,
+.columns {
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.closing {
+  min-height: min(62svh, 620px);
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+
+.contact {
+  padding-top: calc(var(--header) + clamp(2rem, 5vw, 4rem));
+}

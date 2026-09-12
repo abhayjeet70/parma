@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Closing, Img, Marquee, Mosaic, SplitText, TeamCollage, useTilt } from '../components'
+import { MeditationScene } from '../scene'
 import { rooms, spaCategories, visionPoints, worlds, type ImageKey } from '../data/content'
 
 const slides: { k: ImageKey; alt: string }[] = [
@@ -55,7 +56,8 @@ export default function Home() {
 
       <Marquee />
 
-      <section className="section wrap intro">
+      <section className="section wrap intro has-scene">
+        <MeditationScene />
         <p className="statement">
           In scenic Little Washington, unspoiled by time, nature, spa, and spiritual wellness work together.
         </p>

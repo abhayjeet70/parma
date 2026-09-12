@@ -1,4 +1,5 @@
 import { Closing, Img, PageHero } from '../components'
+import { MeditationScene } from '../scene'
 import { spaCategories } from '../data/content'
 
 const yoga = spaCategories.find((c) => c.id === 'yoga')!
@@ -13,7 +14,8 @@ export default function Meditation() {
         lead="The Sushila Shanti Meditation Centre. Connect with the inner life force."
       />
 
-      <section className="section wrap split">
+      <section className="section wrap split has-scene">
+        <MeditationScene />
         <p className="statement split-wide">
           Yoga here is not performance. It is the old desire to evolve past worldly limitation — a healthy body, a creative mind, an evolving spirit.
         </p>

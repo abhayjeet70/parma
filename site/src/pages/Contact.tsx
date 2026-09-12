@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react'
+import { useState, type ChangeEvent, type FormEvent } from 'react'
 import { interests, site } from '../data/content'
 
 const WHATSAPP_NUMBER = '15409878588'
@@ -11,6 +11,11 @@ const today = new Date().toISOString().slice(0, 10)
 export default function Contact() {
   const [sent, setSent] = useState(false)
   const [arrival, setArrival] = useState('')
+  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
+
+  // Letters and symbols never reach the phone field.
+  const onPhone = (e: ChangeEvent<HTMLInputElement>) => setPhone(e.target.value.replace(/\D/g, '').slice(0, 10))
 
   // The whole inquiry goes as one WhatsApp message. No backend, no keys.
   function submit(e: FormEvent<HTMLFormElement>) {
@@ -68,7 +73,16 @@ export default function Contact() {
           </label>
           <label>
             Email
-            <input name="email" type="email" required autoComplete="email" />
+            <input
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value.trim())}
+              pattern="[^@\s]+@[^@\s.]+\.[A-Za-z]{2,}"
+              title="Enter a valid email address, for example name@example.com"
+            />
           </label>
         </div>
 
@@ -90,6 +104,15 @@ export default function Contact() {
                 required
                 pattern="[0-9]{10}"
                 maxLength={10}
+                value={phone}
+                onChange={onPhone}
+                onKeyDown={(e) => {
+                  if (e.key.length === 1 && !/[0-9]/.test(e.key) && !e.metaKey && !e.ctrlKey) e.preventDefault()
+                }}
+                onPaste={(e) => {
+                  e.preventDefault()
+                  setPhone((e.clipboardData.getData('text').replace(/\D/g, '') as string).slice(0, 10))
+                }}
                 placeholder="10-digit number"
                 title="Enter a 10-digit mobile number"
               />

@@ -68,10 +68,11 @@ export function RouteEffects() {
 }
 
 const REVEAL = [
-  'main :is(h2, h3, .statement, dt, dd, summary)',
+  'main :is(h2, h3, .statement, dt, dd, summary, address, figcaption, label, .kicker, .text-link, .button, .portrait-name, .portrait-role, .duration, .world-place, .world-text)',
   'main p:not(.hero *, .page-hero *)',
   'main li:not(:has(img))',
   'main :is(.pair img, .portraits img, .collage img, .strip img, .cat-image, .explore-panels img, .mosaic img, .world-thumb, .team-lead img)',
+  '.footer :is(p, address, nav)',
 ].join(', ')
 
 /** Letters animate in one by one; the parent heading carries the accessible text via aria-label. */
@@ -265,14 +266,53 @@ export function Footer() {
       <div className="wrap footer-base">
         <p>{site.disclaimer}</p>
         <p>© {new Date().getFullYear()} Parma in Little Washington</p>
+        <p className="credit">
+          Designed and maintained by{' '}
+          <a href="https://webnxt.co/" target="_blank" rel="noopener noreferrer">
+            WebNxt
+          </a>
+        </p>
       </div>
     </footer>
   )
 }
 
+/** Pointer-driven 3D tilt. Skipped on touch devices and for reduced-motion visitors. */
+export function useTilt<T extends HTMLElement>() {
+  const ref = useRef<T>(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el || matchMedia('(prefers-reduced-motion: reduce), (hover: none)').matches) return
+    let raf = 0
+    const onMove = (e: PointerEvent) => {
+      const r = el.getBoundingClientRect()
+      const x = (e.clientX - r.left) / r.width - 0.5
+      const y = (e.clientY - r.top) / r.height - 0.5
+      cancelAnimationFrame(raf)
+      raf = requestAnimationFrame(() => {
+        el.style.setProperty('--mx', String(x))
+        el.style.setProperty('--my', String(y))
+      })
+    }
+    const reset = () => {
+      el.style.setProperty('--mx', '0')
+      el.style.setProperty('--my', '0')
+    }
+    el.addEventListener('pointermove', onMove)
+    el.addEventListener('pointerleave', reset)
+    return () => {
+      cancelAnimationFrame(raf)
+      el.removeEventListener('pointermove', onMove)
+      el.removeEventListener('pointerleave', reset)
+    }
+  }, [])
+  return ref
+}
+
 export function PageHero({ image, title, lead, alt }: { image: ImageKey; title: string; lead?: string; alt: string }) {
+  const ref = useTilt<HTMLElement>()
   return (
-    <section className="page-hero">
+    <section className="page-hero is-3d" ref={ref}>
       <Img k={image} alt={alt} eager />
       <div className="wrap page-hero-copy">
         <h1 aria-label={title}>

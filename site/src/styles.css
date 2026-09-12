@@ -2191,3 +2191,149 @@ img[data-reveal='in'] {
     }
   }
 }
+
+/* ---------------------------------------------------------------
+   3D hero: photograph drifts with the cursor, copy floats above it
+----------------------------------------------------------------*/
+.is-3d {
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+}
+
+.is-3d .hero-slides,
+.is-3d > img {
+  transform: translate3d(calc(var(--mx, 0) * -30px), calc(var(--my, 0) * -22px), 0) scale(1.09)
+    rotateX(calc(var(--my, 0) * 2.4deg)) rotateY(calc(var(--mx, 0) * -2.4deg));
+  transition: transform 700ms var(--ease);
+  will-change: transform;
+}
+
+.page-hero.is-3d > img {
+  animation: hero-fade 1200ms var(--ease) both;
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.is-3d .hero-copy,
+.is-3d .page-hero-copy {
+  transform: translate3d(calc(var(--mx, 0) * 14px), calc(var(--my, 0) * 10px), 0);
+  transition: transform 700ms var(--ease);
+}
+
+/* ---------------------------------------------------------------
+   Larger small text
+----------------------------------------------------------------*/
+body {
+  font-size: 1.125rem;
+}
+
+.kicker {
+  font-size: 0.8125rem;
+}
+
+.nav,
+.nav-reserve,
+.button,
+.chat-form button {
+  font-size: 0.875rem;
+}
+
+.portrait-role,
+.duration,
+.cat-count,
+.world-place,
+.optional,
+.chat-chips button {
+  font-size: 0.9375rem;
+}
+
+.text-link,
+.bubble,
+.form label,
+.footer {
+  font-size: 1rem;
+}
+
+.fine,
+.footer-base,
+.chat-foot {
+  font-size: 0.875rem;
+}
+
+.collage-cap .portrait-role {
+  font-size: 0.8125rem;
+}
+
+.menu-toggle,
+.fab-chat {
+  font-size: 0.875rem;
+}
+
+/* ---------------------------------------------------------------
+   Every text element animates into view
+----------------------------------------------------------------*/
+:is(p, li, dt, dd, address, label, figcaption, .kicker, .text-link, .button, .portrait-name, .portrait-role, .duration, .world-place, .world-text)[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(4px);
+  transition: opacity 800ms var(--ease), transform 900ms var(--ease), filter 800ms var(--ease);
+}
+
+:is(p, li, dt, dd, address, label, figcaption, .kicker, .text-link, .button, .portrait-name, .portrait-role, .duration, .world-place, .world-text)[data-reveal='in'] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+h3[data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  filter: blur(8px);
+  transition: opacity 900ms var(--ease), transform 1000ms var(--ease), filter 900ms var(--ease);
+}
+
+h3[data-reveal='in'] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* Captions sit over photographs, so they must not shift them */
+.collage-cap [data-reveal] {
+  transform: none;
+}
+
+/* ---------------------------------------------------------------
+   Phone field: country code + 10-digit number
+----------------------------------------------------------------*/
+.field label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.phone-field {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.5rem;
+  align-items: end;
+}
+
+.phone-field select,
+.phone-field input {
+  margin-top: 0.4rem;
+}
+
+.form input[type='date'] {
+  min-height: 44px;
+}
+
+.credit a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}

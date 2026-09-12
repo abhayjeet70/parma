@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Closing, Img, Marquee, Mosaic, SplitText, TeamCollage } from '../components'
+import { Closing, Img, Marquee, Mosaic, SplitText, TeamCollage, useTilt } from '../components'
 import { rooms, spaCategories, visionPoints, worlds, type ImageKey } from '../data/content'
 
 const slides: { k: ImageKey; alt: string }[] = [
@@ -32,9 +32,10 @@ function HeroSlides() {
 
 export default function Home() {
   const [active, setActive] = useState(0)
+  const heroRef = useTilt<HTMLElement>()
   return (
     <>
-      <section className="hero">
+      <section className="hero is-3d" ref={heroRef}>
         <HeroSlides />
         <div className="wrap hero-copy">
           <h1 aria-label="Parma">
